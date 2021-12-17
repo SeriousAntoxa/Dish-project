@@ -1,0 +1,64 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #00dffcb6;
+  border-radius: 5px;
+  padding: 0 15px;
+
+  &--form {
+    width: 100%;
+
+    &_label {
+      font-size: 1.3rem;
+      line-height: 1.5em;
+    }
+
+    &_input {
+      width: 100%;
+      padding: 5px;
+      font-size: 1.2rem;
+    }
+
+    &_block {
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    &_radio_block {
+      & label {
+        margin-left: 4px;
+        font-size: 1.1rem;
+        line-height: 1.5em;
+      }
+    }
+
+    &_section {
+      width: 100%;
+      padding: 3px;
+      font-size: 1.2rem;
+      line-height: 1.5em;
+      font-weight: 500;
+
+      & option {
+        padding: 3px;
+        font-size: 1.2rem;
+        line-height: 1.5em;
+      }
+    }
+
+    &_btn_block {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &_button {
+      font-size: 1.3rem;
+      font-weight: 600;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

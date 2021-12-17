@@ -1,0 +1,14 @@
+<div class="authorization">
+  <ng-container *ngIf='authorizationService.authUserLocal !== true; else profileUser'>
+    <div class="authorization--dontAuth">
+      <a class="authorization--dontAuth_link authorization--link" routerLink='/log-in' routerLinkActive='active'>LOG-IN</a>
+    </div>
+  </ng-container>
+
+  <ng-template #profileUser>
+    <div class="authorization--profileUser">
+      <a class="authorization--profileUser_link authorization--link" routerLink='/profile'
+        routerLinkActive='active'>PROFILE</a>
+    </div>
+  </ng-template>
+</div>

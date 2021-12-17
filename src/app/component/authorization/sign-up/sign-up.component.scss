@@ -1,0 +1,82 @@
+.sing_up {
+  margin: 0 auto;
+  max-width: 400px;
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #00dffcb6;
+    border-radius: 5px;
+    padding: 30px 30px 10px;
+
+    &_block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      
+      & span {
+        color: #ff2929;
+      }
+    }
+
+    &_btn_block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &_label {
+      font-size: 1.2rem;
+      line-height: 1.5em;
+    }
+
+    &_input {
+      padding: 5px;
+      font-size: 1.2rem;
+      border: 1px solid #bcffca;
+      border-radius: 2px;
+      margin-bottom: 5px;
+
+      &-info {
+        font-size: 0.9em;
+        color:#4d4d4d;
+      }
+      &-error {
+        font-size: 0.9em;
+        color:#ff2929;
+      }
+    }
+
+    &_input-name {
+      &.ng-invalid.ng-touched {
+        border-color: #ff2929;
+      } 
+    }
+    &_input-password {
+      &.ng-invalid.ng-touched {
+        border-color: #ff2929;
+      } 
+    }
+    &_input-email {
+      &.ng-invalid.ng-touched {
+        border-color: #ff2929;
+      }
+    }
+
+    &_button {
+      width: 30%;
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &[disabled] {
+        background-color: #ff2929;
+      }
+    }
+  }
+}

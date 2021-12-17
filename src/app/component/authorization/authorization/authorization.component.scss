@@ -1,0 +1,30 @@
+.authorization {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10px;
+
+  &--link {
+    font-size: 1.3rem;
+    line-height: 1.5em;
+    font-weight: 700;
+
+    &:hover {
+      color: #005f6b;
+      text-decoration: underline;
+    }
+
+    &.active {
+      color: #005f6b;
+      text-decoration: underline;
+    }
+  }
+  &--dontAuth {
+    display: flex;
+    flex-direction: column;
+  }
+  &--profileUser {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,49 @@
+<div class="log_in">
+
+  <form class="log_in--form" (ngSubmit)='submit()' #logInForm>
+    <h3>Log-in form</h3>
+    <div class="log_in--form_block">
+      <label class="log_in--form_label"><span>*</span>name: </label>
+      <input 
+        type="text" 
+        [(ngModel)]="userName" 
+        placeholder="name" 
+        class="log_in--form_input log_in--form_input-name"
+        [class.invalid]='logInFormName.invalid && logInFormName.touched'
+        name="logInFormName"
+        pattern="^\w{5,20}$"
+        required
+        #logInFormName="ngModel">
+      <div class="log_in--form_input-info" *ngIf="logInFormName.valid || logInFormName.untouched">Name can state string for A-Z, a-z, numbers and _. Length will have 5 - 20 symbols</div>
+      <div class="log_in--form_input-error" *ngIf="logInFormName.invalid && logInFormName.touched">Name is not valid! You can use string for A-Z, a-z, numbers and _. Length will have 5 - 20 symbols</div>
+    </div>
+
+    <div class="log_in--form_block">
+      <label class="log_in--form_label"><span>*</span>password: </label>
+      <input 
+        type="password" 
+        [(ngModel)]="userPassword" 
+        placeholder="password" 
+        class="log_in--form_input log_in--form_input-password"
+        [class.invalid]='logInFormPassword.invalid && logInFormPassword.touched'
+        name="logInFormPassword"
+        pattern="^[A-Za-z0-9]{8,16}$"
+        required
+        #logInFormPassword="ngModel">
+      <div class="log_in--form_input-info" *ngIf="logInFormPassword.valid || logInFormPassword.untouched">Password can state string for A-Z, a-z and numbers. Length will have 8 - 16 symbols</div>
+      <div class="log_in--form_input-error" *ngIf="logInFormPassword.invalid && logInFormPassword.touched">Password is not valid! You can use string for A-Z, a-z and numbers. Length will have 8 - 16 symbols</div>
+    </div>
+    <div class="log_in--form_block">
+      <p><span>*</span> - field for main enter</p>
+    </div>
+    <div class="log_in--form_btn_block log_in--form_block">
+      <button 
+        type='submit'
+        class="log_in--form_button" 
+        [disabled]='logInFormName.untouched || logInFormPassword.untouched || logInFormName.invalid && logInFormName.touched || logInFormPassword.invalid && logInFormPassword.touched'>
+        Enter
+      </button>
+      <button type='button' class="log_in--form_button" (click)="signUp()">Sign-up</button>
+    </div>
+  </form>
+</div>

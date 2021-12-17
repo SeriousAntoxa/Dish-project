@@ -1,0 +1,23 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.profile--links {
+  display: flex;
+  margin-bottom: 20px;
+}
+.profile--link {
+  font-size: 1.7rem;
+  margin-right: 20px;
+
+  &:hover {
+    color: #005f6b;
+    text-decoration: underline;
+  }
+
+  &.active {
+    color: #005f6b;
+    text-decoration: underline;
+  }
+}

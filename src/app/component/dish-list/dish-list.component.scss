@@ -1,0 +1,96 @@
+.dish_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+
+  &--form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-left: 20px;
+
+    &--select_ing {
+      font-size: 2rem;
+      line-height: 1.5em;
+    }
+
+    &--message {
+      font-size: 1.6rem;
+      line-height: 1.5em;
+    }
+
+    &--cards {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    &--card {
+      padding: 10px;
+      display: flex;
+      width: 33.3%;
+    }
+  }
+}
+
+
+@media (max-width: 800px) {
+  .dish_list_info--card {
+    width: 50%;
+    
+  }
+  .dish_list_info--select_ing {
+    font-size: 1.7rem;
+    line-height: 1.5em;
+  }
+  .dish_list_info--message {
+      font-size: 1.4rem;
+      line-height: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+  .dish_list_info--card {
+    width: 100%;
+  }
+  .dish_list_info--select_ing {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+  }
+  .dish_list_info--message {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+  }
+}
+
+@media (max-width: 420px) {
+  .dish_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .dish_list_info {
+    margin: 0;
+    align-items: center;
+  }
+  .dish_list_info--cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dish_list_info--card {
+    justify-content: center;
+  }
+}

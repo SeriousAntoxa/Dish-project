@@ -1,0 +1,62 @@
+<div class="sing_up">
+  <form class="sing_up--form" (ngSubmit)='submit()' #singUpForm>
+    <h3>Sign-up form</h3>
+    <div class="sing_up--form_block">
+      <label class="sing_up--form_label"><span>*</span>name: </label>
+      <input 
+        type="text" 
+        [(ngModel)]="userName" 
+        placeholder="name" 
+        class="sing_up--form_input sing_up--form_input-name"
+        [class.invalid]='singUpFormName.invalid && singUpFormName.touched'
+        name="singUpFormName"
+        pattern="^\w{5,20}$"
+        required
+        #singUpFormName="ngModel">
+        <div class="sing_up--form_input-info" *ngIf="singUpFormName.valid || singUpFormName.untouched">Name can state string for A-Z, a-z, numbers and _. Length will have 5 - 20 symbols</div>
+        <div class="sing_up--form_input-error" *ngIf="singUpFormName.invalid && singUpFormName.touched">Name is not valid! You can use string for A-Z, a-z, numbers and _. Length will have 5 - 20 symbols</div>
+    </div>
+
+    <div class="sing_up--form_block">
+      <label class="sing_up--form_label"><span>*</span>password: </label>
+      <input 
+        type="password"
+        [(ngModel)]="userPassword" 
+        placeholder="password" 
+        class="sing_up--form_input sing_up--form_input-password"
+        [class.invalid]='singUpFormPassword.invalid && singUpFormPassword.touched'
+        name="singUpFormPassword"
+        pattern="^[A-Za-z0-9]{8,16}$"
+        required
+        #singUpFormPassword="ngModel">
+        <div class="sing_up--form_input-info" *ngIf="singUpFormPassword.valid || singUpFormPassword.untouched">Password can state string for A-Z, a-z and numbers. Length will have 8 - 16 symbols</div>
+        <div class="sing_up--form_input-error" *ngIf="singUpFormPassword.invalid && singUpFormPassword.touched">Password is not valid! You can use string for A-Z, a-z and numbers. Length will have 8 - 16 symbols</div>
+    </div>
+
+    <div class="sing_up--form_block">
+      <label class="sing_up--form_label">email: </label>
+      <input 
+        type="email" 
+        [(ngModel)]="userEmail" 
+        placeholder="email" 
+        class="sing_up--form_input sing_up--form_input-email"
+        [class.invalid]='singUpFormEmail.invalid && singUpFormEmail.touched'
+        name="singUpFormEmail"
+        pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}"
+        required
+        #singUpFormEmail="ngModel">
+        <div class="sing_up--form_input-error" *ngIf="singUpFormEmail.invalid && singUpFormEmail.touched">E-mail is not valid!</div>
+    </div>
+    <div class="sing_up--form_block">
+      <p><span>*</span> - field for main enter</p>
+    </div>
+    <div class="sing_up--form_btn_block sing_up--form_block">
+      <button 
+        type='submit'
+        class="sing_up--form_button" 
+        [disabled]='singUpFormName.untouched || singUpFormPassword.untouched || singUpFormName.invalid && singUpFormName.touched || singUpFormPassword.invalid && singUpFormPassword.touched'>
+        sign-up
+      </button>
+    </div>
+  </form>
+</div>

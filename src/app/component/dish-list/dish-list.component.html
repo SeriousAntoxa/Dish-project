@@ -1,0 +1,26 @@
+<section class="dish_list">
+
+  <aside class="dish_list--form">
+    <app-form (selectIng)="loadDish()">
+    </app-form>
+  </aside>
+
+  <aside class="dish_list_info">
+    <h3 class="dish_list_info--select_ing">Your search: {{ dishListFormService.selectParams }}</h3>
+
+    <ng-template #noIngredients>
+      <p class="dish_list_info--message">Enter your ingredients!</p>
+    </ng-template>
+    <ng-container *ngIf="selectIngredients !== ''; else noIngredients">
+      <div class="dish_list_info--cards">
+        <div class="dish_list_info--card" *ngFor="let dish of dishListService.dishList">
+          <app-dish-card [dish]='dish' (dishSelected)='selectedDish($event)'></app-dish-card>
+        </div>
+      </div>
+    </ng-container>
+
+
+  </aside>
+</section>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,22 @@
+.user_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &--main {
+    & p {
+      font-size: 1.5rem;
+      line-height: 1.5em;
+    }
+  }
+
+  &--button {
+    height: min-content;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 5px;
+  }
+}

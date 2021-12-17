@@ -1,0 +1,69 @@
+<div class="search">
+  <form class="search--form" (ngSubmit)='submit()' #SearchForm>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Ingredients: </label>
+      <input type="text" [(ngModel)]="ingredients" name='ingredients' class='search--form_input'
+        placeholder="eggs, milk, ..." title="example: eggs, milk" #ourIng>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Random: </label>
+      <div class="search--form_radio_block">
+        <input type="radio" [(ngModel)]="random" id="random1" name="random" value="true">
+        <label for="random1">Yes</label>
+      </div>
+      <div class="search--form_radio_block">
+        <input type="radio" [(ngModel)]="random" id="random2" name="random" value="false">
+        <label for="random2">No</label>
+      </div>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Diet: </label>
+      <select name="book" size="1" class="search--form_section" [(ngModel)]="diet">
+        <option value="" selected></option>
+        <option *ngFor="let item of dishListFormService.dietArray" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Meal type: </label>
+      <select name="book" size="1" class="search--form_section" [(ngModel)]="mealType">
+        <option value="" selected></option>
+        <option *ngFor="let item of dishListFormService.mealTypeArray" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Dish type: </label>
+      <select name="book" size="1" class="search--form_section" [(ngModel)]="dishType">
+        <option value="" selected></option>
+        <option *ngFor="let item of dishListFormService.dishTypeArray" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Cuisine type: </label>
+      <select name="book" size="1" class="search--form_section" [(ngModel)]="cuisineType">
+        <option value="" selected></option>
+        <option *ngFor="let item of dishListFormService.cuisineTypeArray" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="search--form_block">
+      <label class="search--form_label">Health: </label>
+      <select name="book" size="1" class="search--form_section" [(ngModel)]="health">
+        <option value="" selected></option>
+        <option *ngFor="let item of dishListFormService.healthArray" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+
+    <div class="search--form_btn_block search--form_block">
+      <button type='submit' class="search--form_button">
+        Search
+      </button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="dish_card">
+  <div class="dish_card--item">
+    <fa-icon [icon]='faHeart' class="dish_card--item_favorites"
+      [class.dish_card--item_favorites-select]="selectDishFavorite" (click)='favoriteSelect()'></fa-icon>
+    <div class="dish_card--item_info">
+      <img class="dish_card--item_info_image" src="{{dish.image}}" alt='{{dish.name}}'>
+      <div class="dish_card--item_info_block">
+        <h3 class="dish_card--item_info_title">{{dish.name}}</h3>
+      </div>
+    </div>
+    <button type="button" (click)='selectItemDish()' class="dish_card--item_button">details</button>
+  </div>
+</div>

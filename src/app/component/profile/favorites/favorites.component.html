@@ -1,0 +1,12 @@
+<div class="favorites">
+  <ng-template #noFavorites>
+    <p class="favorites_info--message">You haven't favorites dishes</p>
+  </ng-template>
+  <ng-container *ngIf="favoritesService.ifFavoritesInUser; else noFavorites">
+    <div class="favorites_info--cards">
+      <div class="favorites_info--card" *ngFor="let dish of favoritesDishList">
+        <app-dish-card [dish]='dish' (dishSelected)='selectedDish($event)'></app-dish-card>
+      </div>
+    </div>
+  </ng-container>
+</div>

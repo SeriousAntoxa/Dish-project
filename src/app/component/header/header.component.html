@@ -1,0 +1,20 @@
+<div class="header">
+  <h1 class="header--title">{{title | uppercase}}</h1>
+  <nav class="header--nav">
+    <ul class="nav--list">
+      <li class="nav--list_item">
+        <a class="nav--list_item_link" routerLink='/home' routerLinkActive='active'>HOME</a>
+      </li>
+      <li class="nav--list_item">
+        <a class="nav--list_item_link" routerLink='/dish-list' routerLinkActive='active'>DISH</a>
+      </li>
+      <li class="nav--list_item">
+        <a class="nav--list_item_link" routerLink='/about' routerLinkActive='active'>ABOUT</a>
+      </li>
+      <li class="nav--list_item">
+        <a class="nav--list_item_link" routerLink='/contact' routerLinkActive='active'>CONTACT</a>
+      </li>
+    </ul>
+    <app-authorization [authUser]='authUser'></app-authorization>
+  </nav>
+</div>

@@ -1,0 +1,23 @@
+<div class="dish--item">
+  <ng-container *ngIf='selectDish !== undefined'>
+    <fa-icon [icon]='faHeart' class="dish--item_favorites" [class.dish--item_favorites-select]="selectDishFavorite"
+    (click)='favoriteSelect()'></fa-icon>
+    <img class="dish--item_image" src="{{selectDish.image}}" alt='{{selectDish.name}}'>
+
+    <div class="dish--item_info">
+
+      <h3 class="dish--item_info_title">Dish: {{selectDish.name}}</h3>
+
+      <p>Dish type: {{selectDish.type}}</p>
+      <p>Meal type: {{selectDish.mealType}}</p>
+      <p>Calories: {{selectDish.calories}}</p>
+      <p>Diet: {{selectDish.diet}}</p>
+      <p>Health: {{selectDish.health}}</p>
+      <p>Cuisine Type: {{selectDish.cuisineType}}</p>
+
+      <app-ingredients [ingredients]="selectDish.ingredients"></app-ingredients>
+
+    </div>
+  </ng-container>
+
+</div>
